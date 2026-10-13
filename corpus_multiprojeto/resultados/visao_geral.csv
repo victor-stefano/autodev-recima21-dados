@@ -1,0 +1,14 @@
+indicador;valor
+eventos;1079
+chamadas;801
+chamadas_ok;691
+commits;215
+limites;63
+horas_ativas;55.9
+horas_chamadas_ok;40.3
+horas_falhas_watchdog;10.9
+n_falhas_watchdog;21
+horas_outras_falhas;4.7
+n_outras_falhas;89
+pct_chamadas_ok;86.3
+limites_por_provedor;"{""codex"": 35, ""claude"": 27, ""antigravity"": 1}"

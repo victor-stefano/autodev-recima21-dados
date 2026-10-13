@@ -1,0 +1,7 @@
+falha;data;descricao;recuperacao
+F1;2026-10-05;A primeira mensagem não iniciou a execução;intervenção do usuário
+F2;2026-10-06;Atualização da extensão quebrou a conexão dos agentes com o servidor do AutoDev;intervenção do usuário
+F3;2026-10-05 a 2026-10-06;Seis pontos de aprovação aprovados automaticamente e registrados como aprovação do usuário;não se aplica (falha de governança)
+F4;2026-10-06 a 2026-10-07;"Reinicialização do Windows durante espera por limite; servidor remoto voltou, execução não";intervenção do usuário, 11,4 h após o fim previsto da espera
+F5;2026-10-05;Agente reescreveu o .gitignore e apagou linhas pedidas pelo usuário;intervenção do usuário
+F6;2026-10-07 a 2026-10-08;"Suspensão do computador durante chamada do agente; relógio do watchdog parou junto";automática, após 14,3 h parado

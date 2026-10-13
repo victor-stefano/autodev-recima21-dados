@@ -1,0 +1,11 @@
+data_utc;tipo
+2026-10-05T21:39:49.268Z;pedido inicial
+2026-10-05T23:38:16.536Z;liberação para continuar (ponto de aprovação)
+2026-10-06T11:02:48.228Z;liberação para continuar (ponto de aprovação)
+2026-10-06T17:40:45.302Z;correção de falha (F2)
+2026-10-06T18:39:21.471Z;envio de insumo (arquivos de marca)
+2026-10-07T10:21:44.310Z;correção de falha (F4)
+2026-10-08T15:35:47.889Z;nova entrega (fase 10)
+2026-10-08T21:16:44.256Z;pergunta de acompanhamento
+2026-10-08T23:18:49.646Z;nova entrega (fase 11)
+2026-10-09T23:29:17.227Z;nova entrega (fase 12)

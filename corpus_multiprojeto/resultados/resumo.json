@@ -1,0 +1,240 @@
+{
+  "arquivo": "quota_anonimizado.jsonl",
+  "registros_no_arquivo": 1079,
+  "periodo_utc": [
+    "2026-08-26",
+    "2026-09-27"
+  ],
+  "visao_geral": {
+    "eventos": 1079,
+    "chamadas": 801,
+    "chamadas_ok": 691,
+    "commits": 215,
+    "limites": 63,
+    "horas_ativas": 55.9,
+    "horas_chamadas_ok": 40.3,
+    "horas_falhas_watchdog": 10.9,
+    "n_falhas_watchdog": 21,
+    "horas_outras_falhas": 4.7,
+    "n_outras_falhas": 89,
+    "pct_chamadas_ok": 86.3,
+    "limites_por_provedor": {
+      "codex": 35,
+      "claude": 27,
+      "antigravity": 1
+    }
+  },
+  "projetos_commits": {
+    "failover-e2e": {
+      "fora_do_horario": 1,
+      "total": 1
+    },
+    "failover-e2e2": {
+      "fora_do_horario": 1,
+      "total": 1
+    },
+    "nightly-2026-08-28": {
+      "fora_do_horario": 56,
+      "total": 58
+    },
+    "discord-live-mvp": {
+      "fora_do_horario": 31,
+      "total": 31
+    },
+    "autodev_client": {
+      "fora_do_horario": 26,
+      "total": 26
+    },
+    "autodev": {
+      "fora_do_horario": 42,
+      "total": 68
+    },
+    "nosuchplace": {
+      "fora_do_horario": 15,
+      "total": 15
+    },
+    "nightly-2026-09-27": {
+      "fora_do_horario": 15,
+      "total": 15
+    }
+  },
+  "commits_fora_do_horario": {
+    "n": 187,
+    "total": 215,
+    "pct": 87.0
+  },
+  "filtro_execucoes": {
+    "parametros": {
+      "gap_h": 6.0,
+      "min_duracao_min": 15.0,
+      "min_chamadas": 5
+    },
+    "execucoes_total": 36,
+    "resultado": {
+      "eventos": 1048,
+      "chamadas": 777,
+      "chamadas_ok": 672,
+      "commits": 213,
+      "limites": 58,
+      "horas_ativas": 55.7,
+      "horas_chamadas_ok": 40.0,
+      "horas_falhas_watchdog": 10.9,
+      "n_falhas_watchdog": 21,
+      "horas_outras_falhas": 4.7,
+      "n_outras_falhas": 84,
+      "execucoes": 27,
+      "commits_fora_do_horario": 185,
+      "pct_commits_fora_do_horario": 86.9,
+      "horas_operacao": 142.5
+    },
+    "versao_anterior_do_artigo": {
+      "execucoes": 27,
+      "eventos": 1039,
+      "chamadas": 746,
+      "commits": 207,
+      "limites": 55,
+      "horas_ativas": 52.1,
+      "horas_operacao": 138
+    },
+    "reproduz_versao_anterior": false
+  },
+  "episodios_cota": {
+    "limites_brutos": 63,
+    "limites_sem_duplicata": 53,
+    "regra_adotada": "corrigida",
+    "corrigida": {
+      "episodios": 35,
+      "desfechos": {
+        "troca de provedor": 11,
+        "sem retomada": 1,
+        "espera programada": 20,
+        "retomada manual ou tardia": 3
+      },
+      "autonomos": 31,
+      "pct_autonomia": 88.6,
+      "ic95_wilson": [
+        74.0,
+        95.5
+      ],
+      "horas_espera_programada": 48.9
+    },
+    "anterior": {
+      "episodios": 24,
+      "desfechos": {
+        "sem retomada": 1,
+        "troca de provedor": 8,
+        "espera programada": 12,
+        "retomada manual ou tardia": 3
+      },
+      "autonomos": 20,
+      "pct_autonomia": 83.3,
+      "ic95_wilson": [
+        64.1,
+        93.3
+      ],
+      "horas_espera_programada": 54.9
+    }
+  },
+  "cota": {
+    "claude_semanal_pico_pct": {
+      "2026-08-31": 99,
+      "2026-09-07": 99,
+      "2026-09-21": 99,
+      "2026-09-28": 97
+    },
+    "claude_janela_5h": {
+      "leituras": 31,
+      "min_pct": 91,
+      "obs": "o CLI só informava a janela perto do limite; medida viesada"
+    },
+    "claude_tokens": {
+      "chamadas_claude": 657,
+      "chamadas_com_tokens": 248,
+      "tokens_milhoes": 668.6,
+      "commits_claude": 213,
+      "tokens_por_commit_milhoes_limite_inferior": 3.14
+    },
+    "obs": "percentual de cota é da conta inteira, inclusive uso manual; Codex e Antigravity não informam cota"
+  },
+  "complementares": {
+    "execucoes_iniciadas_fora_do_horario": 24,
+    "horas_operacao_fora_do_horario": 128.8,
+    "pct_operacao_fora_do_horario": 90.4,
+    "horas_ativas_fora_do_horario": 49.5,
+    "pct_ativas_fora_do_horario": 88.9,
+    "execucoes_que_atingiram_limite": 14,
+    "horas_operacao_nessas_execucoes": 100.3,
+    "projetos_nas_execucoes": [
+      "autodev",
+      "autodev-sandbox-v10",
+      "autodev-sandbox-v9",
+      "autodev_client",
+      "discord-live-mvp",
+      "nightly-2026-08-28",
+      "nightly-2026-09-27",
+      "nosuchplace"
+    ],
+    "decomposicao_operacao_h": {
+      "agente_ativo": 54.2,
+      "parada_apos_limite": 55.7,
+      "outros_intervalos": 32.6,
+      "outros_maiores_que_15min": 28.8,
+      "n_outros_maiores_que_15min": 15
+    },
+    "por_provedor": {
+      "codex": {
+        "chamadas": 99,
+        "chamadas_ok": 59,
+        "horas_ativas": 5.7,
+        "limites": 30,
+        "commits": 0
+      },
+      "claude": {
+        "chamadas": 641,
+        "chamadas_ok": 586,
+        "horas_ativas": 46.1,
+        "limites": 27,
+        "commits": 213
+      },
+      "antigravity": {
+        "chamadas": 37,
+        "chamadas_ok": 27,
+        "horas_ativas": 3.9,
+        "limites": 1,
+        "commits": 0
+      }
+    },
+    "claude_tokens_nas_execucoes": {
+      "chamadas_claude": 641,
+      "chamadas_com_tokens": 248,
+      "tokens_milhoes": 668.6
+    },
+    "episodios_por_provedor": {
+      "codex": {
+        "troca de provedor": 10,
+        "sem retomada": 1,
+        "retomada manual ou tardia": 1,
+        "espera programada": 1
+      },
+      "claude": {
+        "espera programada": 19,
+        "retomada manual ou tardia": 2
+      },
+      "antigravity": {
+        "troca de provedor": 1
+      }
+    },
+    "madrugada_h": {
+      "0h_a_4h": {
+        "agente_ativo": 18.0,
+        "parada_apos_limite": 14.7,
+        "commits": 97
+      },
+      "4h_a_8h": {
+        "agente_ativo": 5.4,
+        "parada_apos_limite": 22.9,
+        "commits": 13
+      }
+    }
+  }
+}

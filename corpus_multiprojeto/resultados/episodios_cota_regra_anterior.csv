@@ -1,0 +1,25 @@
+inicio_utc;projeto;provedor;registros_limite;desfecho;retomada_utc
+2026-08-27T02:24:51.682000+00:00;failover-e2e;codex;2;sem retomada;
+2026-08-27T02:30:55.162000+00:00;failover-e2e2;codex;1;troca de provedor;2026-08-27T02:30:55.184Z
+2026-08-28T05:45:17.343000+00:00;nightly-2026-08-28;codex;3;troca de provedor;2026-08-28T06:05:43.491Z
+2026-08-28T06:32:24.719000+00:00;nightly-2026-08-28;claude;1;espera programada;2026-08-28T10:20:04.800Z
+2026-08-28T10:30:35.813000+00:00;nightly-2026-08-28;codex;1;troca de provedor;2026-08-28T10:30:35.828Z
+2026-08-29T07:35:01+00:00;nightly-2026-08-28;claude;2;retomada manual ou tardia;2026-08-31T04:36:15.034Z
+2026-08-31T04:54:14.733000+00:00;nightly-2026-08-28;claude;2;espera programada;2026-08-31T14:30:07.328Z
+2026-09-01T01:55:23.956000+00:00;nightly-2026-08-28;claude;3;espera programada;2026-09-01T12:10:00.309Z
+2026-09-03T02:35:20.555000+00:00;nightly-2026-08-28;claude;2;espera programada;2026-09-03T09:50:00.335Z
+2026-09-03T23:39:16.599000+00:00;nightly-2026-08-28;claude;3;espera programada;2026-09-04T11:00:00.278Z
+2026-09-04T21:01:50.905000+00:00;nightly-2026-08-28;claude;2;retomada manual ou tardia;2026-09-14T02:37:56.787Z
+2026-09-05T04:48:19.869000+00:00;nightly-2026-08-28;codex;18;retomada manual ou tardia;2026-09-14T02:37:56.787Z
+2026-09-14T02:41:40.835000+00:00;nightly-2026-08-28;claude;1;espera programada;2026-09-14T03:04:52.786Z
+2026-09-15T21:15:33.599000+00:00;nightly-2026-08-28;codex;1;troca de provedor;2026-09-15T21:15:33.620Z
+2026-09-16T02:59:07.171000+00:00;nightly-2026-08-28;codex;1;troca de provedor;2026-09-16T02:59:07.194Z
+2026-09-16T03:40:26.855000+00:00;nightly-2026-08-28;claude;1;espera programada;2026-09-16T03:50:00.034Z
+2026-09-19T08:57:33.993000+00:00;autodev_client;claude;1;espera programada;2026-09-19T10:30:00.120Z
+2026-09-19T12:09:14.214000+00:00;autodev_client;claude;1;espera programada;2026-09-19T15:30:00.148Z
+2026-09-23T12:54:28.138000+00:00;autodev;codex;1;troca de provedor;2026-09-23T12:54:28.163Z
+2026-09-26T17:54:51.371000+00:00;nosuchplace;claude;1;espera programada;2026-09-26T19:10:00.077Z
+2026-09-26T22:28:21.999000+00:00;nosuchplace;claude;1;espera programada;2026-09-27T00:40:01.348Z
+2026-09-27T17:55:09.238000+00:00;nightly-2026-09-27;codex;2;espera programada;2026-09-27T21:41:00.059Z
+2026-09-27T21:34:25.310000+00:00;nightly-2026-09-27;antigravity;1;troca de provedor;2026-09-27T21:41:00.059Z
+2026-09-27T22:56:15.626000+00:00;nightly-2026-09-27;codex;1;troca de provedor;2026-09-27T23:29:16.391Z

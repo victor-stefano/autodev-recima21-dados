@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Se usar estes dados ou scripts, cite-os como abaixo."
+title: "AutoDev: dados e scripts de análise do artigo RECIMA21"
+type: dataset
+version: "1.0-artigo"
+date-released: "2026-10-15"
+license: ["MIT", "CC-BY-4.0"]
+authors:
+  - family-names: "Matos"
+    given-names: "Danillo Gabriel Vieira de"
+  - family-names: "Chaves"
+    given-names: "Diego Cesar de Oliveira"
+  - family-names: "Joaquim"
+    given-names: "Eduardo Pateis"
+  - family-names: "Francisco"
+    given-names: "Guilherme Felix"
+  - family-names: "Carvalho"
+    given-names: "Lucas Alberto dos Santos"
+  - family-names: "Lindo"
+    given-names: "Nathan Justo da Costa"
+  - family-names: "Garcia"
+    given-names: "Victor Stefano"
+  - family-names: "Menezes"
+    given-names: "Walter da Silva"
+keywords: ["agentes de IA", "orquestração", "cota de assinatura", "tolerância a falhas", "AutoDev"]
