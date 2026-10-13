@@ -224,6 +224,32 @@
         "troca de provedor": 1
       }
     },
+    "ic95_wilson_por_provedor": {
+      "codex": {
+        "autonomos": 11,
+        "episodios": 13,
+        "ic95": [
+          57.8,
+          95.7
+        ]
+      },
+      "claude": {
+        "autonomos": 19,
+        "episodios": 21,
+        "ic95": [
+          71.1,
+          97.3
+        ]
+      },
+      "antigravity": {
+        "autonomos": 1,
+        "episodios": 1,
+        "ic95": [
+          20.7,
+          100.0
+        ]
+      }
+    },
     "madrugada_h": {
       "0h_a_4h": {
         "agente_ativo": 18.0,

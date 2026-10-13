@@ -356,6 +356,11 @@ def main(arq, saida):
         "claude_tokens_nas_execucoes": {"chamadas_claude": len(fcl), "chamadas_com_tokens": len(ftok),
                                         "tokens_milhoes": round(sum(c["tokens"] for c in ftok) / 1e6, 1)},
         "episodios_por_provedor": {k: dict(v) for k, v in ep_prov.items()},
+        "ic95_wilson_por_provedor": {
+            k: {"autonomos": v["troca de provedor"] + v["espera programada"], "episodios": sum(v.values()),
+                "ic95": [round(100 * x, 1) for x in wilson(v["troca de provedor"] + v["espera programada"],
+                                                            sum(v.values()))]}
+            for k, v in ep_prov.items()},
     }
 
     # ---------------- 7. Distribuição por hora do dia (Figura 7) ----------------

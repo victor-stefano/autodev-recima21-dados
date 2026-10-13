@@ -35,7 +35,7 @@ O script recria a pasta `resultados/`, e todos os números do Quadro 4 e do Quad
 | Decomposição das 142,5 h | `complementares.decomposicao_operacao_h` |
 | 14 de 27 execuções atingiram o limite | `complementares.execucoes_que_atingiram_limite` |
 | Episódios de cota: 31 de 35 (88,6%) e sensibilidade 20 de 24 | `episodios_cota.corrigida` e `episodios_cota.anterior` |
-| Quadro 5 (por provedor) | `complementares.episodios_por_provedor` |
+| Quadro 5 (por provedor, com IC95% de Wilson) | `complementares.episodios_por_provedor` e `complementares.ic95_wilson_por_provedor` |
 | Pico semanal de cota do Claude Code | `cota.claude_semanal_pico_pct` |
 | Figura 7 e madrugada (0h–4h × 4h–8h) | `distribuicao_horaria.csv` e `complementares.madrugada_h` |
 
