@@ -10,7 +10,7 @@
     "custo_api_brl": 695.13
   },
   "ptax_brl_por_usd": 4.9698,
-  "ptax_data": "2026-10-06 (a confirmar)",
+  "ptax_data": "2026-10-06",
   "ppt_uso_manual_paralelo": {
     "respostas": 265,
     "tokens": 65774337,
@@ -51,5 +51,12 @@
     "commits_de_fase": 24,
     "arquivos_versionados": 353
   },
-  "falhas": 6
+  "falhas": 6,
+  "commits_por_horario": {
+    "commits_na_execucao": 36,
+    "em_horario_comercial": 21,
+    "fora_do_horario": 15,
+    "pct_commits_fora": 41.7,
+    "pct_tempo_fora": 63.0
+  }
 }

@@ -1,7 +1,7 @@
 {
   "title": "AutoDev: dados e scripts de análise do artigo RECIMA21",
   "upload_type": "dataset",
-  "version": "1.1-artigo",
+  "version": "1.2-artigo",
   "language": "por",
   "description": "<p>Material de reprodução do artigo \"AutoDev: orquestração autônoma e persistente para desenvolvimento de software\" (TCC de Engenharia da Computação, Universidade São Judas Tadeu, 2026).</p><p><code>corpus_multiprojeto/</code>: registro de cota anonimizado do AutoDev (26/08 a 27/09/2026, 1.079 registros), script de análise e resultados (Quadros 4 e 5 e Figura 7 do artigo). <code>estudo_de_caso_ppt_maker/</code>: script e resultados agregados do estudo de caso (Seção 3.5); as evidências brutas não são publicadas.</p><p>O código-fonte do AutoDev não faz parte deste material.</p>",
   "notes": "Scripts (*.py) sob licença MIT; dados e resultados (*.jsonl, *.csv, *.json) sob Creative Commons Atribuição 4.0 Internacional. Instruções de reprodução no README.",
@@ -9,9 +9,9 @@
   "keywords": ["agentes de IA", "orquestração", "cota de assinatura", "tolerância a falhas", "AutoDev"],
   "creators": [
     {"name": "Matos, Danillo Gabriel Vieira de"},
-    {"name": "Chaves, Diego Cesar de Oliveira"},
+    {"name": "Chaves, Diego César de Oliveira"},
     {"name": "Joaquim, Eduardo Pateis"},
-    {"name": "Francisco, Guilherme Felix"},
+    {"name": "Francisco, Guilherme Félix"},
     {"name": "Carvalho, Lucas Alberto dos Santos"},
     {"name": "Lindo, Nathan Justo da Costa"},
     {"name": "Garcia, Victor Stefano"},

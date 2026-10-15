@@ -10,7 +10,7 @@ O repositório contém apenas os **scripts de análise** e os **dados anonimizad
 corpus_multiprojeto/            Seções 2.4 e 3.4 do artigo
   dados/quota_anonimizado.jsonl   registro de cota do AutoDev, 26/08 a 27/09/2026 (1.079 registros)
   analise_autodev.py              script de análise (Python 3.9+, só biblioteca padrão)
-  figura7.py                      gera a Figura 7 a partir de resultados/distribuicao_horaria.csv (requer matplotlib)
+  figura7.py                      gera a Figura 7 (dois painéis: commits e horas de operação por hora do dia) a partir de resultados/distribuicao_horaria.csv (requer matplotlib)
   resultados/                     saída do script (resumo.json e CSVs)
 estudo_de_caso_ppt_maker/       Seção 3.5 do artigo
   analise.py                      script usado sobre as evidências do estudo de caso
@@ -47,13 +47,14 @@ No registro de cota, o campo `root` (caminho da pasta do projeto no computador d
 
 ## Observações sobre o estudo de caso PPT_Maker
 
-As evidências brutas do estudo de caso (transcrições das sessões, registro de eventos do AutoDev e histórico do Git) contêm material interno da empresa onde o projeto foi desenvolvido e **não são publicadas**. Por isso, `analise.py` está aqui para documentar o método, mas não pode ser executado sem essas evidências. Os resultados publicados são versões reduzidas da saída do script:
+As evidências brutas do estudo de caso (transcrições das sessões, registro de eventos do AutoDev e histórico do Git) contêm informações privadas e **não são publicadas**. Por isso, `analise.py` está aqui para documentar o método, mas não pode ser executado sem essas evidências. Os resultados publicados são versões reduzidas da saída do script:
 
 - `ppt_revisoes_qa.csv` e `ppt_intervencoes_do_usuario.csv` trazem só data, resultado e tipo, sem o texto das mensagens.
 - `ppt_consumo_por_sessao.csv` traz só as sessões do projeto PPT_Maker.
 - `ppt_tempo_por_fase.csv` traz as parcelas por fase arredondadas a uma casa; por isso, a soma da coluna `outro_parado_h` (9,8 h) difere do total calculado sem arredondamento em `resumo_ppt.json` (10,0 h).
+- `ppt_commits_horario.csv` traz os 36 *commits* do Git feitos durante a execução (de 05/10/2026, 18h39, a 10/10/2026, 6h40), com data e indicação de horário comercial; o resumo está em `resumo_ppt.json`, campo `commits_por_horario` (seção 3.5 do artigo).
 - `ppt_falhas.csv` resume as seis falhas descritas no Quadro 7 do artigo. As falhas F4 e F6 foram caracterizadas pelos registros de energia do Windows (Kernel-Power 506 e 507).
-- O custo equivalente pela API usa a tabela de preços de 25/09/2026 para o modelo Claude Opus 5.5 (US$ por milhão de tokens: entrada 4,00; saída 20,00; leitura de cache 0,20; escrita de cache 5,00 para 5 minutos e 8,00 para 1 hora) e a PTAX de 06/10/2026.
+- O custo equivalente pela API usa a tabela de preços de 25/09/2026 para o modelo Claude Opus 5.5 (US$ por milhão de tokens: entrada 4,00; saída 20,00; leitura de cache 0,20; escrita de cache 5,00 para 5 minutos e 8,00 para 1 hora) e a PTAX de venda de 06/10/2026 (R$ 4,9698, Banco Central do Brasil).
 
 ## Limitações dos dados
 
@@ -66,6 +67,13 @@ As evidências brutas do estudo de caso (transcrições das sessões, registro d
 
 - Scripts (`*.py`): licença MIT (arquivo `LICENSE`).
 - Dados e resultados (`*.jsonl`, `*.csv`, `*.json`): Creative Commons Atribuição 4.0 Internacional (arquivo `LICENSE-DADOS.md`).
+
+## Alterações na versão 1.2-artigo
+
+- `corpus_multiprojeto/figura7.py`: a Figura 7 passa a ter dois painéis, com a quantidade de *commits* e as horas de operação (agente ativo, espera após limite de cota e outros intervalos) por hora do dia, no lugar do percentual de cada série.
+- `estudo_de_caso_ppt_maker/analise.py`: nova função `commits_por_horario`, que distribui todos os *commits* do Git feitos durante a execução entre dentro e fora do horário comercial; novo resultado `ppt_commits_horario.csv` e campo `commits_por_horario` em `resumo_ppt.json`.
+- PTAX de 06/10/2026 conferida no Banco Central do Brasil.
+- Grafia dos nomes dos autores corrigida nos metadados.
 
 ## Como citar
 

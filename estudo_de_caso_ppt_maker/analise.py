@@ -8,7 +8,7 @@ import csv
 import json
 import re
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
@@ -27,7 +27,7 @@ BASE = {
     "claude-sonnet-4-6": (3, 15), "claude-haiku-4-5": (1, 5),
 }
 LEITURA = {"claude-opus-5-5": 0.20, "claude-fable-5-1": 0.25, "claude-sonnet-5-5": 0.20}
-PTAX = 4.9698  # R$ por US$, 06/10/2026 (confirmar em ptax.bcb.gov.br)
+PTAX = 4.9698  # R$ por US$, venda, 06/10/2026 (Banco Central do Brasil, conferido)
 
 
 def preco(modelo):
@@ -174,6 +174,46 @@ def tempo_por_fase(fases, esperas, resumo):
         "outro_parado_h")}
 
 
+INICIO_EXEC = datetime.fromisoformat("2026-10-05T18:39:00-03:00")
+FIM_EXEC = datetime.fromisoformat("2026-10-10T06:40:00-03:00")
+
+
+def horario_comercial(d):
+    """Segunda a sexta, das 8h às 18h, no horário de Brasília (mesma definição do corpus)."""
+    return d.weekday() < 5 and 8 <= d.hour < 18
+
+
+def commits_por_horario(arquivo, resumo):
+    """Distribui todos os commits do Git feitos durante a execução entre dentro e fora do horário comercial.
+
+    Aceita linhas 'hash|data' ou 'hash|data|autor|assunto' (data no formato git --date=iso).
+    """
+    linhas = []
+    for linha in open(arquivo, encoding="utf-8-sig"):
+        if not linha.strip():
+            continue
+        h, data = linha.rstrip("\n").split("|", 3)[:2]
+        d = datetime.strptime(data.strip(), "%Y-%m-%d %H:%M:%S %z")
+        if INICIO_EXEC <= d <= FIM_EXEC:
+            linhas.append({"commit": h, "data_local": d.isoformat(),
+                           "horario_comercial": "sim" if horario_comercial(d) else "não"})
+    linhas.sort(key=lambda x: x["data_local"])
+    gravar_csv("ppt_commits_horario.csv", linhas)
+    minutos, fora = 0, 0
+    t = INICIO_EXEC
+    while t < FIM_EXEC:
+        minutos += 1
+        fora += not horario_comercial(t)
+        t += timedelta(minutes=1)
+    n = len(linhas)
+    n_hc = sum(1 for x in linhas if x["horario_comercial"] == "sim")
+    resumo["commits_por_horario"] = {
+        "commits_na_execucao": n, "em_horario_comercial": n_hc, "fora_do_horario": n - n_hc,
+        "pct_commits_fora": round(100 * (n - n_hc) / n, 1),
+        "pct_tempo_fora": round(100 * fora / minutos, 1),
+    }
+
+
 def main():
     resumo = {}
 
@@ -302,6 +342,7 @@ def main():
     resumo["git"] = {"commits": commits, "commits_de_fase": sum(f[2] for f in fases.values()),
                      "arquivos_versionados": sum(1 for _ in open(EV / "03_git" / "arquivos_versionados.txt",
                                                                  encoding="utf-8"))}
+    commits_por_horario(EV / "03_git" / "git_log.txt", resumo)
     resumo["gerado_em_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     (SAIDA / "resumo.json").write_text(json.dumps(resumo, ensure_ascii=False, indent=2, default=dict),
                                         encoding="utf-8")
